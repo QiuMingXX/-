@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    // arguments 是一个类数组对象，但是不是数组
+    // 实参都是放到arguments中保存 
+
+    function fun(){
+      console.log(arguments);
+      console.log(arguments.length);
+      console.log(arguments.callee);
+    }
+
+    fun("QM",true);
+
+  </script>
+</body>
+</html>

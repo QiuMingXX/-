@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let obj = {
+            name: 'QM',
+            age: 18,
+            sayName() {
+                console.log(obj.name);
+                console.log("this is a method");
+            }
+        }
+        function fun() {
+            console.log(obj.name);
+
+            console.log("this is a function");
+        }
+
+
+        // 这叫做调用方法，
+        obj.sayName();
+
+        // 这叫做调用函数
+        fun();
+    </script>
+</body>
+
+</html>

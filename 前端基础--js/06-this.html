@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+
+    // 1.以函数的形式调用，this永远都是window。
+    // 2.以方法的形式调用，this就是调用那个方法的对象
+
+
+    function sayname(){
+      console.log(this.name);
+    };
+
+    var obj = {
+      name:"QM",
+      age:18,
+      sayName:sayname
+    }
+    var obj2 = {
+      name:"MXX",
+      age:17,
+      sayName:sayname
+    }
+
+
+    var name = "全局属性name"
+    sayname();
+    obj.sayName();
+    obj2.sayName();
+
+  </script>
+</body>
+</html>

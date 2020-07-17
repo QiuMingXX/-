@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let arr = ["QM","MXX","QYQK"];
+
+
+    //回调函数中会传三个值，分别是   值value  ,索引 index,  对象【】 就是当前正在遍历的对象
+    arr.forEach((value,index,object) => {
+      console.log(value);
+      console.log(index);
+      console.log(object);
+    })
+  </script>
+</body>
+</html>

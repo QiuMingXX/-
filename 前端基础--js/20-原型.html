@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // prototype
+
+    // 原型对象中的方法，是给实例对象使用的
+
+    console.log(Date.prototype);
+
+
+    function Fun(){
+
+    }
+    // 默认指向一个空对象
+    console.log(Fun.prototype);
+
+    // 给原型添加对象
+    Fun.prototype.test = function(){
+      console.log("test");
+    }
+    console.log(Fun.prototype);
+
+    // 创建一个实例
+    // 原型对象中的方法，是由实例调用的， 一般不会 Fun.prototype.test()来调用
+    let fun = new Fun();
+    fun.test();
+
+
+    // !!!!!  constructor
+    // 存在相互引用的关系
+    console.log(Fun === Fun.prototype.constructor);   //true
+    console.log(Date === Date.prototype.constructor);   //true
+
+
+
+
+     
+
+    
+  </script>
+</body>
+</html>

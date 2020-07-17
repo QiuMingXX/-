@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    function fun(){
+      console.log(this);
+    }
+
+    // 通过函数方法来调用，
+    // 当对函数调用call()和apply(),都会调用函数执行
+
+    // fun.call();
+    // fun.apply();
+
+    var obj ={
+      name:'QM'
+
+    };
+    // 区别
+      // 修改this的指向
+    fun()
+    fun.call(obj);
+    fun.apply(obj);
+
+    // call() 可以将实参再对象之后依次传递；
+    // apply() 需要将实参统一封装到一个数组中统一传递
+
+
+
+    // 总结：this的情况
+    //      1。以函数的形式调用时，this永远都是window；
+    //      2.以方法形式调用时，this是调用方法的对象；
+    //      3.以构造函数的方式调用时，this是新创建的实例；
+    //      4.以call和apply形式调用时，this是指定的那个对象
+
+  </script>
+</body>
+</html>

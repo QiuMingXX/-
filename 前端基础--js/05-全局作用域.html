@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var a = 10;
+
+    function fu(){
+      var a ="我是fu函数里的a";
+
+      function fun(){
+
+        // 寻找就近的变量，直接写变量名
+        // 寻找全局变量，添加window.
+        console.log(window.a);
+      }
+
+      fun();
+    }
+
+    fu();
+
+
+  </script>
+</body>
+</html>

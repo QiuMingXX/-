@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    // 属性一般放在构造函数中， 方法一般都是放在原型对象中
+
+    // 构造函数
+    let Person = function(name,age){
+      this.name = name;
+      this.age = age;
+    }
+
+    // 原型
+    Person.prototype.setName = function(name){
+      this.name = name
+    }
+
+    let p1 = new Person("bob",12);
+    console.log(p1);
+    p1.setName("jack");
+    console.log(p1);
+
+    let p2 = new Person('lily',14);
+    console.log(p2);
+    p2.setName('lucy');
+    console.log(p2);
+
+
+
+
+
+  </script>
+</body>
+</html>

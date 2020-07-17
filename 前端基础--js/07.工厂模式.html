@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    // 用的不多，因为都是用object来创建对象，无法区分不同的对象
+    
+
+    function creatperson(name,age,gender){
+      var obj = new Object();
+
+
+      obj.name = name;
+      obj.age = age;
+      obj.gender = gender;
+      obj.sayname = function(){
+        console.log(this.name);
+      }
+
+      // 一定要将对象作为返回值返回，不然会显示未定义
+      return obj;
+    }
+
+    var obj2= creatperson("QM",18,"男");
+    var obj3 = creatperson("MXX",17,"女");
+
+    // console.log(obj2.name)
+
+    obj2.sayname();
+    obj3.sayname();
+  </script>
+</body>
+</html>

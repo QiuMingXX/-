@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <script>
+      let arr =[1,2,3,4,5];
+      let arr2 = [5,4,3,2,1];
+      let arr3 = [10,9,8,7,6];
+
+
+      // concat  可以连接两个或多个数组，并返回结果 , 不会对原数组产生影响
+      // 不仅可以传数组，还可以传单个的元素
+      let res = arr.concat(arr2,arr3,6,7,8,9,10);
+
+      console.log(arr);
+      console.log(arr2);
+      console.log(arr3);
+      console.log(res);
+
+
+      //join  可以将数组转换成字符串，  不会对原数组产生影响
+      // join() 中可以给定一个字符串作为参数，这个字符串将会成为数组中元素的连接符
+
+      let res2 = arr.join("+");
+      console.log(res2);
+
+      // reverse  颠倒数组的位置 ,会直接修改原数组
+      let arr4 = [5,4,3,2,1]
+      arr4.reverse();
+      console.log(arr4);
+
+      // sort  对数组中的元素 进行重排序     也会影响原数组。
+      // 默认按照unicode编码进行排序
+      let arr5 = ["b","a",'d','e','c'];
+      arr5.sort();
+      console.log(arr5);
+
+      // // 如果需要升序排列，返回a-b;
+      // // 如果返回降序排列，返回b-a;
+      let  arr6=[6,8,3,9,10,60];
+
+      arr6.sort((a,b) =>{
+        // return a-b;
+        return b-a;
+      })
+      console.log(arr6);
+
+
+      
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script>
+
+    // 什么是垃圾
+      //当一个对象没有任何变量或属性对他进行引用，此时我们就永远无法操作，该对象，此时，这个对象我们就叫他垃圾
+
+
+      // 如：
+      var obj = new Object();
+      //将对象的赋值为nul，那么指针就断掉了，那么内存中的obj对象就变成了垃圾
+      obj = null;
+
+
+      // 在js中存在自动的垃圾回收机制，会自动的将这些垃圾对象从内存中回收，我们不需要也不能进行垃圾回收的操作
+
+      // 我们需要做的事情就是将不再使用的对象设置为null即可;
+
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    function Fun(){
+
+    };
+
+    //每一个函数都有一个prototype , （显式原型）
+    console.log(Fun.prototype);
+
+    // 创建一个实例
+    let fun = new Fun();
+    // 每一个实例都有一个__proto__ ,（隐式原型）
+    console.log(fun.__proto__);
+
+    // 对象的隐式原型的值 为其对应的构造函数的显式原型的值 ，   即  实例的隐式原型 === 对应构造函数的显式原型
+    console.log(Fun.prototype === fun.__proto__);   //true
+
+  </script>
+</body>
+</html>
