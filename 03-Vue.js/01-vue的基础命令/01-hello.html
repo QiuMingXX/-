@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div id='app'>
+    <div>{{msg}}</div>
+    <!-- title属性在移动端是没有用的  -->
+    <span v-bind:title="message">鼠标悬停几秒钟查看此处动态绑定的信息</span>
+    <div v-if="seen">现在你看到我了</div>
+    <ul>
+      <!-- for 循环的方式是  item in XXX   和微信小程序不一样 -->
+      <li v-for="item in list">{{item}}</li>
+    </ul>
+    <div>
+      <span>{{msg2}}</span>
+      <button @click="rever">反转消息</button>
+    </div>
+    <input type="text" v-model="msg3">
+    <span>{{msg3}}</span>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        msg: 'hello',
+        message: '页面加载于 ' + new Date().toLocaleString(),
+        seen: true,
+        list: [
+          1,
+          2,
+          3
+        ],
+        msg2: "hello,vue.js",
+        msg3: "小伙伴，你好呀！"
+      },
+      methods: {
+        // 可以用字面量方式定义方法
+        rever() {
+          this.msg2 = this.msg2.split('').reverse().join('')
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

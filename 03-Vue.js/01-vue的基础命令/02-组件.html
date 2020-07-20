@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id='app'>
+    {{msg}}
+    <ul>
+      <!--  主要是这些绑定， :todo,将item绑定到 props里的todo上 -->
+      <todo
+        v-for="item in groceryList"
+        :todo="item"
+        :key=item.id
+      ></todo>
+    </ul>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    // 为啥要把它放在上面才有用呢
+    Vue.component('todo', {
+      props:['todo'],
+      template: '<li>{{todo.text}}</li>'
+    })
+
+
+    var app = new Vue({
+      el: "#app",
+      data: {
+        msg: '111',
+        groceryList: [{
+            id: 0,
+            text: '蔬菜'
+          },
+          {
+            id: 1,
+            text: '奶酪'
+          },
+          {
+            id: 2,
+            text: '随便其它什么人吃的东西'
+          }
+        ]
+
+      },
+      methods: {
+
+      }
+    })
+  </script>
+</body>
+
+</html>
