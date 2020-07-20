@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    // 等号右边是数值和布尔值，那么会先转换成对象
+
+    let {toString:s} = 123;
+    s === Number.prototype.toString;    //true
+
+    let {toString:t} = true;
+    t === Boolean.prototype.toString;    //true
+    
+  </script>
+</body>
+</html>

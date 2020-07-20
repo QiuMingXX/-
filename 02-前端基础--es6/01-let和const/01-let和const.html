@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    // let 会形成块级作用域     用var就只会输出最后的那个i
+    for(let i=0 ; i<4;i++){
+      console.log(i);
+    }
+
+    //let 不会有变量提升
+    console.log(a);   //undefined
+    var a = 1;
+
+    // console.log(b);    //报错，因为不存在变量提升    
+    // let b = 1;     
+
+
+    // 暂时性死区
+    let tmp;
+    if (true){
+      // 暂时性死区开始
+      //tmp = 12;   //报错
+      //console.log(tmp);   //报错
+
+      // 暂时性死区结束
+      let tmp;
+      console.log(tmp); //undefined
+
+      tmp = 123;
+      console.log(tmp);
+    }
+
+    // let 不允许再相同的作用域中重复声明同一个变量
+    function fun(){
+      let a1 = 1;
+      // let a1 = 2     //报错
+    }
+    fun();
+
+
+
+    // 常量 const   //定义的是一个常量，一旦声明，就不能改变
+    //本质是  指向的那个内存地址不得改动，所以定义对象可以通过 修改属性的方式来改变
+    const person = {
+      name:'QM',
+      age:18
+    }
+    // person = 'MXX'      //报错
+    person.name = 'Mxx';    //这样才对
+
+    // 只声明初始化会报错
+    const per = 'QM';
+    console.log(per);
+  </script>
+</body>
+</html>

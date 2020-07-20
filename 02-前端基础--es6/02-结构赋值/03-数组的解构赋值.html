@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    //数组的结构赋值
+    let [a, b, c] = [1, 2, 3];
+
+    console.log(a,b,c);
+
+
+    // 加三个点的解构
+    let [head,...tails] = [1,2,3,4];
+    console.log(head);
+    console.log(tails);
+
+
+    // 数组的解构，对象必须是可遍历的结构
+    let [d,e,f] = "abc";
+    // let [g,h,i] = 1;   //报错
+    console.log(d,e,f);
+    // console.log(g,h,i);
+
+
+    // 数组的结构赋值，允许设置默认值
+    let [ab,cd=2] = [1];
+    console.log(ab,cd);
+  </script>
+
+</body>
+
+</html>

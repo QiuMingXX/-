@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    // 传统的方法  isFinite 和 isNaN 会先进行数值转换，  现在的Number.isFinite(),如果传入的不是数值，会直接返回false
+
+
+    //判断数值是否是有限的
+    console.log(Number.isFinite(15));     //true
+    console.log(Number.isFinite(Infinity));   //false
+
+
+    // 判断数值是否是NaN;
+    console.log(Number.isNaN(Nan));   //true
+    console.log(Number.isNaN(15));    //false
+
+  </script>
+</body>
+</html>

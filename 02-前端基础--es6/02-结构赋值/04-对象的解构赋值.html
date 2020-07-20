@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    // 实际开发中，还是使用对象的解构赋值是最多的，即提取json中的数据
+    
+    // 对象的结构赋值，是根据变量名来进行赋值的，所以要保证变量名和对象内的名字一样
+    // let {foo,bar} = {foo:"aaa",bar:"bbb"};
+    //  上面一行代码等价于下面这行
+    let{foo:foo,bar:bar} = {foo:"aaa",bar:"bbb"};
+    let {baz} = {foo:'aaa',bar:'bbb'};
+    console.log(foo,bar);
+    console.log(baz);
+
+    // 嵌套赋值   定义变量之前一定要  确定变量的类型
+    let arr = [];
+    let obj = {};
+
+    // 对象的结构赋值，内部机制是找到同名属性，然后赋值给相应的对象，真正被赋值的是后者，而不是前者
+    // 大括号在行首，需要用括号包起来，避免浏览器将{。。。}理解成一个代码块
+    ({foo:obj.prop,bar:arr[0]} = {foo:123,bar:true});
+    console.log(obj);
+    console.log(arr);
+
+  </script>
+</body>
+</html>
