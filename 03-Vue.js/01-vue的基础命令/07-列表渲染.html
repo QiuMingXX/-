@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<!-- 使用v-for的时候尽量都用v-key进行配对使用 -->
+		<div id='app'>
+			<ul>
+				<li v-for='(item,index) in list'>{{index}}---{{item.message}}</li>
+			</ul>
+			
+			<!-- key是键，value是值，一般都将value放在key的前面-->
+			<ul>
+				<li v-for='(value,key) in obj'>{{key}}--{{value}}</li>
+			</ul>
+			
+			<!-- 想要过滤数组但是不更改原数组的时候，可以使用计算属性的方式，   当计算属性不能满足时，可以使用methods中的方法 -->
+			<ul>
+				<li v-for='item in envNumber'>{{item}}</li>
+			</ul>
+		</div>
+		
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script type="text/javascript">
+			var app = new Vue({
+				el:"#app",
+				data:{
+					list:[
+						{message:'foo'},
+						{message:'bar'}
+					],
+					obj:{
+						name:'QM',
+						age:18,
+						gender:"man"
+					},
+					number:[1,2,3,4,5]
+				},
+				computed:{
+					envNumber:function(){
+						return this.number.filter(function(number){
+							return number % 2 == 0
+						})
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
